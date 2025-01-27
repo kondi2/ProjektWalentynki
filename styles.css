@@ -1,0 +1,156 @@
+body {
+  font-family: 'Impact', sans-serif;
+}
+/* Tło dla strony 1 */
+body.strona1 {
+  background: url('serduszko.jpg') ;
+  background-size: cover; /* Dopasowuje obraz do całej strony */
+  background-repeat: no-repeat; /* Zapobiega powtarzaniu obrazu */
+  background-position: center; /* Centruje obraz */
+  background-attachment: fixed; /* Sprawia, że tło nie przesuwa się */
+}
+
+/* Tło dla strony 2 */
+body.strona2 {
+  background: url('') no-repeat center center/cover;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /*  kolumny */
+  grid-template-rows: repeat(3, 1fr);   /*  wiersze */
+  gap: 10px; /* Odstęp między elementami */
+  height: 90vh; /* Wysokość na cały ekran */
+  width: 100vw;  /* Szerokość na cały ekran */
+  padding: 10px; /* Opcjonalnie odstęp wewnątrz siatki */
+}
+
+p {
+  color: rgb(17, 16, 17);
+  font-family: 'Impact', sans-serif;
+  font-size: 43px;
+  -webkit-text-stroke: 2px;
+  -webkit-text-fill-color: #f0eded;
+  }
+
+.item {
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
+
+.item-bad {
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  border-radius: 8px;
+  font-size: 1.5rem;
+}
+.simple-button {
+  align-items: center;
+  width: 200px;
+  height: 50px;
+  display: inline-block;
+  background-color: #ff4d6d; /* Różowy kolor przycisku */
+  color: white; /* Kolor tekstu */
+  font-size: 1rem; /* Rozmiar tekstu */
+  font-weight: bold;
+  padding: 10px 20px; /* Wewnętrzne odstępy */
+  border: none; /* Bez obramowania */
+  border-radius: 8px; /* Zaokrąglenie rogów */
+  cursor: pointer; /* Zmiana kursora na kliknięcie */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efekty przejścia */
+}
+
+.simple-button:hover {
+  background-color: #ff5e7d; /* Jaśniejszy różowy na najechanie */
+  transform: scale(1.05); /* Subtelne powiększenie */
+}
+
+.simple-button:active {
+  background-color: #e0425f; /* Ciemniejszy różowy na kliknięcie */
+  transform: scale(0.95); /* Subtelne zmniejszenie */
+}
+
+.bad-button {
+  width: 200px;
+  height: 50px;
+  display: inline-block;
+  background-color: #858181; /* Różowy kolor przycisku */
+  color: white; /* Kolor tekstu */
+  font-size: 1rem; /* Rozmiar tekstu */
+  font-weight: bold;
+  padding: 10px 20px; /* Wewnętrzne odstępy */
+  border: none; /* Bez obramowania */
+  border-radius: 8px; /* Zaokrąglenie rogów */
+  cursor: pointer; /* Zmiana kursora na kliknięcie */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Efekty przejścia */
+}
+
+.bad-button:hover {
+  background-color: #4e4c4c; /* Jaśniejszy różowy na najechanie */
+  transform: scale(1.05); /* Subtelne powiększenie */
+}
+
+.bad-button:active {
+  background-color: #3f3e3e; /* Ciemniejszy różowy na kliknięcie */
+  transform: scale(0.95); /* Subtelne zmniejszenie */
+}
+
+
+.heart-button {
+  position: relative;
+  width: 140px; /* Powiększenie rozmiaru dla lepszych proporcji */
+  height: 140px;
+  background-color: #ff4d6d; /* Kolor serca */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transform: rotate(-45deg); /* Obrót do kształtu serca */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.heart-button:before,
+.heart-button:after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-color: #ff4d6d;
+  border-radius: 50%; /* Okrągłe końce */
+  z-index: -1; /* Umieszczenie za głównym kształtem serca */
+}
+
+.heart-button:before {
+  top: -70px; /* Przesunięcie w górę, aby nie nachodziło na tekst */
+  left: 0;
+}
+
+.heart-button:after {
+  top: 0;
+  left: 70px; /* Przesunięcie w prawo, aby uniknąć kolizji z tekstem */
+}
+
+.heart-button span {
+  position: absolute;
+  top: 50%; /* Wycentrowanie tekstu w osi Y */
+  left: 50%; /* Wycentrowanie tekstu w osi X */
+  transform: translate(-50%, -50%) rotate(45deg); /* Naprawa obrotu tekstu */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1; /* Zapewnienie, że tekst będzie widoczny */
+}
+
+/* Efekt najechania */
+.heart-button:hover {
+  transform: rotate(-45deg) scale(1.1); /* Powiększenie serca */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Lekki cień */
+}
